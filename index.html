@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>おみくじ</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif; padding: 24px; }
+    .omikuji-result { font-size: 20px; margin-bottom: 16px; }
+    .omikuji-button { padding: 10px 14px; font-size: 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div id="result" class="omikuji-result">おみくじを引いてね</div>
+  <button onclick="drawOmikuji()" class="omikuji-button">おみくじを引く</button>
+
+  <script>
+    function drawOmikuji() {
+      const omikuji = ["大吉", "中吉", "小吉", "吉", "末吉", "凶", "大凶"];
+      const picked = omikuji[Math.floor(Math.random() * omikuji.length)];
+      document.getElementById("result").textContent = picked;
+    }
+  </script>
+</body>
+</html>
